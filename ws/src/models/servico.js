@@ -5,6 +5,7 @@ const servico = new Schema({
    salaoId:{
         type: mongoose.Types.ObjectId,
         ref: 'Salao',
+        required: true
    },
    titulo:{
     type: String,
@@ -23,7 +24,7 @@ const servico = new Schema({
         required: true,
 },
     recorrencia:{
-        type: Number, // Periodo de refação
+        type: Number, // Periodo de refação do serviço em dias
         required: true,
 },
     descricao:{
@@ -42,6 +43,7 @@ const servico = new Schema({
     },
 });
 
-salao.index({ geo: '2dsphere'});
-
-module.export = mongoose.model('Servico', servico);
+mongoose.model('Servico', servico)
+module.exports = {
+    Servico: mongoose.model('Servico', servico)
+}

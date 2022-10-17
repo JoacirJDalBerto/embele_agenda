@@ -35,4 +35,4 @@ const salao = new Schema({
 
 salao.index({ geo: '2dsphere'});
 
-module.export = mongoose.model('Salao', salao);
+module.exports = mongoose.model('Salao', salao);

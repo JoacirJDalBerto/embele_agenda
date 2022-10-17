@@ -37,39 +37,23 @@ const cliente = new Schema({
         enum: ['A', 'I'],
         default: 'A'
     },
-    contaBancaria: {
-        titular: {
-            type: String,
-            required: true
-        },
-        cpfCnpj: {
-            type: String,
-            required: true
-        },
-        Banco: {
-            type: String,
-            required: true
-        },
+    documento:{
         tipo: {
             type: String,
+            enum: ['individual', 'corporation'],
             required: true
         },
-        agencia: {
+        numero:{
             type: String,
             required: true
         },
-        numero: {
-            type: String,
-            required: true
-        },
-        dv: {
-            type: String,
-            required: true
-        }
     },
-    recipientId:{
-        type: String,
-        required: true
+    endereco:{
+            cidade: String,
+            cep: String,
+            cep: String,
+            numero: String,
+            pais: String,
     },
     dataCadastro: {
         type: Date,
